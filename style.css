@@ -1,0 +1,174 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+#app {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 60px);
+}
+
+.charts-container {
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+    margin-bottom: 20px;
+}
+
+.chart {
+    width: 32%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart h2 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.controls-and-data {
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+}
+
+.controls {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.button-group button {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.button-group button:last-child {
+    margin-right: 0;
+}
+
+.data-display {
+    width: 48%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+button {
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.frequency-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+}
+
+.coordinate-display {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.status-lights {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.status-light {
+    display: flex;
+    align-items: center;
+}
+
+.light {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+#lock-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#lock-overlay.hidden {
+    display: none;
+}
+
+#lock-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#unlock-password {
+    margin-bottom: 10px;
+    padding: 5px;
+}

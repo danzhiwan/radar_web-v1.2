@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>循迹平台远程监控终端</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="lock-overlay" class="hidden">
+        <div id="lock-content">
+            <input type="password" id="unlock-password" placeholder="请输入解锁密码">
+            <button id="unlock-button">解锁</button>
+        </div>
+    </div>
+    <div id="app">
+        <header>
+            <h1>循迹平台远程监控终端</h1>
+            <button id="lock-button">锁定</button>
+        </header>
+        <div class="main-container">
+            <div class="charts-container">
+                <div class="chart">
+                    <h2>循迹平台路径追踪</h2>
+                    <canvas id="coordinate-chart"></canvas>
+                </div>
+                <div class="chart">
+                    <h2>RCS值</h2>
+                    <canvas id="rcs-chart"></canvas>
+                </div>
+                <div class="chart">
+                    <h2>速度和距离</h2>
+                    <canvas id="speed-distance-chart"></canvas>
+                </div>
+            </div>
+            <div class="controls-and-data">
+                <div class="controls">
+                    <div class="button-group">
+                        <button id="toggle-tracking">启动循迹</button>
+                        <button id="toggle-data">开启数据传输</button>
+                        <button id="clear-data">清除数据</button>
+                    </div>
+                    <div class="frequency-control">
+                        <label for="data-frequency">数据传输频率 (Hz):</label>
+                        <input type="number" id="data-frequency" min="1" max="5" value="1">
+                        <button id="set-frequency">设置频率</button>
+                    </div>
+                </div>
+                <div class="data-display">
+                    <div class="coordinate-display">
+                        <span>经度: </span><span id="longitude-value">0.0000</span>
+                    </div>
+                    <div class="coordinate-display">
+                        <span>纬度: </span><span id="latitude-value">0.0000</span>
+                    </div>
+                    <div class="status-lights">
+                        <div class="status-light">
+                            <span>定位状态: </span>
+                            <div id="positioning-status" class="light"></div>
+                        </div>
+                        <div class="status-light">
+                            <span>雷达状态: </span>
+                            <div id="radar-status" class="light"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
